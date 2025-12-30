@@ -1,0 +1,7 @@
+notebooks/*
+
+.vscode/
+*.pyc
+data/*
+*.joblib
+*.csv

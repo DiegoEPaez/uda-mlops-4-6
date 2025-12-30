@@ -1,0 +1,4 @@
+[core]
+    remote = pgdrive
+['remote "pgdrive"']
+    url = gdrive://1ZCjJlX1-rKAeUOJQGMYK-83jyGasjtxW

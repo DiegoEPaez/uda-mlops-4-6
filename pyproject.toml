@@ -1,0 +1,26 @@
+[tool.pytest.ini_options]
+pythonpath = [
+    "."
+]
+
+testpaths = [
+    "tests"
+]
+
+[project]
+name = "mlops-course4-project"
+version = "0.1.0"
+description = "Udacity MLOps Project 4"
+authors = [ { name = "Diego" } ]
+requires-python = ">=3.8"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ["E203", "W503"]

@@ -1,0 +1,14 @@
+[MASTER]
+ignore=venv,.venv,.git
+init-hook='import sys; sys.path.append(".")'
+
+[MESSAGES CONTROL]
+disable=
+    missing-module-docstring,
+    missing-class-docstring,
+    missing-function-docstring,
+    too-few-public-methods,
+    invalid-name
+
+[FORMAT]
+max-line-length=88
