@@ -2,6 +2,8 @@ notebooks/*
 
 .vscode/
 *.pyc
-data/*
+# Only ignore raw data files; allow DVC metadata (e.g., *.dvc) to be tracked by git
+data/*.csv
+!data/*.dvc
 *.joblib
 *.csv
