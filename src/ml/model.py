@@ -20,7 +20,11 @@ def save_model(model, encoder, lb):
 
 
 def load_model():
-    return joblib.load(PATH_MODEL), joblib.load(PATH_ENCODER), joblib.load(PATH_LB)
+    return (
+        joblib.load(PATH_MODEL),
+        joblib.load(PATH_ENCODER),
+        joblib.load(PATH_LB),
+    )
 
 
 def train_model(X_train, y_train):
@@ -78,7 +82,12 @@ def compute_metrics_slices(data, model, cat_features, encoder, lb):
             slice = data[data[var] == val]
 
             X, y, _, _ = process_data(
-                slice, cat_features, "salary", training=False, encoder=encoder, lb=lb
+                slice,
+                cat_features,
+                "salary",
+                training=False,
+                encoder=encoder,
+                lb=lb,
             )
             y_preds = model.predict(X)
             metrics_per_slice = compute_model_metrics(y, y_preds)

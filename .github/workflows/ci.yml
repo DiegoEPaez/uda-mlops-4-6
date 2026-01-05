@@ -25,7 +25,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run flake8
-        run: flake8 src/
+        run: flake8 "--max-line-length=88 src/
 
       - name: Run unit tests
         run: pytest -v
