@@ -84,5 +84,7 @@ To use your new S3 bucket from the AWS CLI you will need to create an IAM user w
 
 
 ## Execution
-Please run using:
+For testing use:
 uvicorn src.main:app --reload
+For prod:
+uvicorn src.main:app --host 0.0.0.0 --port 10000
