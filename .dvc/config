@@ -1,4 +1,6 @@
 [core]
-    remote = pgdrive
+    remote = myremote
 ['remote "pgdrive"']
     url = gdrive://1ZCjJlX1-rKAeUOJQGMYK-83jyGasjtxW
+['remote "myremote"']
+    url = s3://mlops-uda-202512/course_4
