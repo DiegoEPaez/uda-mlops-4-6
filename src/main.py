@@ -1,7 +1,7 @@
 # Put the code for your API here.
 import pandas as pd
 from fastapi import FastAPI
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 from .ml.data import process_data
 from .ml.model import inference, load_model
@@ -21,7 +21,27 @@ class Census(BaseModel):
     hours_per_week: int = Field(..., alias="hours-per-week")
     native_country: str = Field(..., alias="native-country")
 
-    model_config = {"populate_by_name": True}
+    model_config = ConfigDict(
+        populate_by_name=True,
+        json_schema_extra={
+            "examples": [
+                {
+                    "age": 39,
+                    "workclass": "State-gov",
+                    "education": "Bachelors",
+                    "marital-status": "Never-married",
+                    "occupation": "Adm-clerical",
+                    "relationship": "Not-in-family",
+                    "race": "White",
+                    "sex": "Male",
+                    "capital-gain": 5000,
+                    "capital-loss": 0,
+                    "hours-per-week": 40,
+                    "native-country": "United-States",
+                }
+            ]
+        },
+    )
 
 
 app = FastAPI()

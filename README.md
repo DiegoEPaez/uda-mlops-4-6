@@ -88,3 +88,6 @@ For testing use:
 uvicorn src.main:app --reload
 For prod:
 uvicorn src.main:app --host 0.0.0.0 --port 10000
+
+# GitHub Repository URL
+https://github.com/DiegoEPaez/uda-mlops-4-6
